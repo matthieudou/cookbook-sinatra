@@ -8,5 +8,15 @@ configure :development do
 end
 
 get '/' do
-  '<h1>⭕ hello world ⭕</h1>'
+  @users = ["matthieudou", "other"]
+  erb :index
+end
+
+get '/about' do
+  erb :about
+end
+
+get '/team/:username' do
+  puts params[:username]
+  "The username is #{params[:username]}"
 end
